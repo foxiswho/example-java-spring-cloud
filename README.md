@@ -36,3 +36,12 @@ mvn package
 或
 mvn package skip test
 ```
+
+
+进入target 目录下执行 2条命令（请把原来启动本测试项目的Server 关闭，否则造成端口冲突），
+```SHELL
+java -jar fox-eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+
+java -jar fox-eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
+
+```
