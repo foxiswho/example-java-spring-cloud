@@ -9,8 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 //开启断路器功能
 @EnableCircuitBreaker
-//激活
-@EnableDiscoveryClient
+@EnableDiscoveryClient //激活
 @SpringBootApplication
 public class FoxEurekaServiceConsumerApplication {
 
