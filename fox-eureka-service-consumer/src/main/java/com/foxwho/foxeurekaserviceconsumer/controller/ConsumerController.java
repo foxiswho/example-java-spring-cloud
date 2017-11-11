@@ -8,10 +8,16 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class ConsumerController {
+    //@Autowired
+    //RestTemplate restTemplate;
+//    @RequestMapping(value = "/consumer",method = RequestMethod.GET)
+//    public String helloConsumer(){
+//        return restTemplate.getForEntity("http://FOX-SERVICE-PROVIDER/hello",String.class).getBody();
+//    }
     @Autowired
-    RestTemplate restTemplate;
+    HelloService helloService;
     @RequestMapping(value = "/consumer",method = RequestMethod.GET)
     public String helloConsumer(){
-        return restTemplate.getForEntity("http://FOX-SERVICE-PROVIDER/hello",String.class).getBody();
+        return helloService.helloService();
     }
 }
