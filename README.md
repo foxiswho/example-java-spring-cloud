@@ -11,6 +11,8 @@ Spring Boot 2.0.0.BUILD-SNAPSHOT
 
 Mac 系统
 
+IDEA 2017.2.x
+
 # fox-hello 简单RESTful Api 构建
 使用 http://start.spring.io 构建
 
