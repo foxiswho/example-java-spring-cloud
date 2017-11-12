@@ -1,11 +1,9 @@
-package com.foxwho.foxeurekaserviceprovider.controller;
+package com.foxwho.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import org.apache.log4j.Logger;
 
@@ -18,7 +16,7 @@ public class HelloController {
     private DiscoveryClient client;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String index() {
+    public String hello() throws Exception {
 
         for (String s : client.getServices()) {
             System.out.println("services " + s);
@@ -41,5 +39,23 @@ public class HelloController {
 
 
         return "ServiceProvider->1";
+    }
+
+    @RequestMapping(value = "/hello1", method = RequestMethod.GET)
+    public String hello(@RequestParam String name) {
+
+        return "ServiceProvider->hello1"+name;
+    }
+
+    @RequestMapping(value = "/hello2", method = RequestMethod.GET)
+    public User hello(@RequestHeader String name, @RequestHeader Integer age) {
+
+        return new User(name,age);
+    }
+
+    @RequestMapping(value = "/hello3", method = RequestMethod.POST)
+    public String hello(@RequestBody User user) {
+
+        return "Hello "+ user.getName() + ", " + user.getAge();
     }
 }

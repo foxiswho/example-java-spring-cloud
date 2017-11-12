@@ -1,4 +1,4 @@
-package com.foxwho.foxeurekaserviceprovider;
+package com.foxwho;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
