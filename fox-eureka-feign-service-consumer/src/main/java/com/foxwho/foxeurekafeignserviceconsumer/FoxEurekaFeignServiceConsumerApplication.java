@@ -11,10 +11,11 @@ import org.springframework.context.annotation.Bean;
 @EnableDiscoveryClient  //激活
 @SpringBootApplication
 public class FoxEurekaFeignServiceConsumerApplication {
-//    @Bean
-//    Logger.Level feignLoggerLevel() {
-//        return Logger.Level.FULL;
-//    }
+    //主类中设置日志
+    @Bean
+    Logger.Level feignLoggerLevel() {
+        return Logger.Level.FULL;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(FoxEurekaFeignServiceConsumerApplication.class, args);

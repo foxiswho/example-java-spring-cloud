@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import org.apache.log4j.Logger;
 import java.util.List;
+import java.util.Random;
 
 @RestController
 public class HelloController {
@@ -35,6 +36,10 @@ public class HelloController {
             }
 
         }
+        //测试超时
+//        int sleepTime=new Random().nextInt(3000);
+//        logger.info("sleepTime:"+sleepTime);
+//        Thread.sleep(sleepTime);
 
 
         return "ServiceProvider->1";
