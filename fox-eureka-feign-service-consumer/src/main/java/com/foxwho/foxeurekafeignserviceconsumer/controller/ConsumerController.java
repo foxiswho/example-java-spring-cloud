@@ -3,9 +3,8 @@ package com.foxwho.foxeurekafeignserviceconsumer.controller;
 
 import com.foxwho.foxeurekafeignserviceconsumer.model.User;
 import com.foxwho.foxeurekafeignserviceconsumer.service.HelloService;
-//import com.foxwho.foxeurekafeignserviceconsumer.service.RefactorHelloService;
+import com.foxwho.foxeurekafeignserviceconsumer.service.RefactorHelloService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConsumerController {
     @Autowired
     private HelloService helloService;
-//    @Autowired
-//    private RefactorHelloService refactorHelloService;
+    @Autowired
+    private RefactorHelloService refactorHelloService;
 
 
     @RequestMapping(value = "/feign-consumer", method = RequestMethod.GET)
@@ -32,13 +31,13 @@ public class ConsumerController {
         sb.append(helloService.hello(new User("DIDI", 30))).append("\n");
         return sb.toString();
     }
-//
-//    @RequestMapping(value = "/feign-consumer3", method = RequestMethod.GET)
-//    public String helloConsumer3() {
-//        StringBuilder sb = new StringBuilder();
-//        sb.append(refactorHelloService.hello("MIMI")).append("\n");
-//        sb.append(refactorHelloService.hello("MIMI", 20)).append("\n");
-//        sb.append(refactorHelloService.hello(new User("MIMI", 20))).append("\n");
-//        return sb.toString();
-//    }
+
+    @RequestMapping(value = "/feign-consumer3", method = RequestMethod.GET)
+    public String helloConsumer3() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(refactorHelloService.hello("MIMI")).append("\n");
+        sb.append(refactorHelloService.hello("MIMI", 20)).append("\n");
+        sb.append(refactorHelloService.hello(new com.foxwho.dto.User("MIMI", 20))).append("\n");
+        return sb.toString();
+    }
 }

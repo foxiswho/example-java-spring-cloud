@@ -1,9 +1,10 @@
 package com.foxwho.foxeurekafeignserviceconsumer.service;
 
-//import org.springframework.cloud.netflix.feign.FeignClient;
+import com.foxwho.service.HelloService;
+import org.springframework.cloud.netflix.feign.FeignClient;
 
-//@FeignClient(value = "fox-service-provider")
-//public interface RefactorHelloService extends HelloService {
-//
-//
-//}
+@FeignClient(value = "fox-service-provider")
+public interface RefactorHelloService extends HelloService {
+
+
+}
