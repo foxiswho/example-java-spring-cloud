@@ -6,7 +6,6 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import org.apache.log4j.Logger;
-
 import java.util.List;
 
 @RestController
